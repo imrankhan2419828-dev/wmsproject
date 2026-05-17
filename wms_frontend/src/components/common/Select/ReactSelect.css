@@ -1,0 +1,71 @@
+﻿/* ==================== REACT SELECT STYLES ==================== */
+
+.react-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    width: 100%;
+}
+
+.react-select-label {
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    line-height: var(--leading-tight);
+}
+
+.required-star {
+    color: var(--danger);
+    margin-left: var(--spacing-1);
+}
+
+.react-select-container {
+    width: 100%;
+}
+
+    .react-select-container.has-error .react-select__control {
+        border-color: var(--danger) !important;
+    }
+
+.react-select-error {
+    font-size: var(--font-xs);
+    color: var(--danger);
+    margin-top: var(--spacing-1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] .react-select__control {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .react-select__menu {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .react-select__option {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .react-select__option--is-focused {
+    background: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .react-select__option--is-selected {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
+[data-theme="dark"] .react-select__single-value {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .react-select__input {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .react-select__placeholder {
+    color: var(--text-muted) !important;
+}

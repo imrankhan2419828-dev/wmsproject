@@ -1,0 +1,167 @@
+﻿.trial-balance-page {
+    padding: 20px;
+}
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+    .page-header h2 {
+        margin: 0;
+        color: #333;
+    }
+
+.filter-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.date-filters {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .form-group label {
+        font-weight: 500;
+        color: #555;
+        font-size: 13px;
+    }
+
+    .form-group input {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        min-width: 150px;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+
+.btn-filter, .btn-clear {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    height: 36px;
+}
+
+.btn-filter {
+    background: #007bff;
+    color: white;
+}
+
+    .btn-filter:hover:not(:disabled) {
+        background: #0056b3;
+    }
+
+.btn-clear {
+    background: #6c757d;
+    color: white;
+}
+
+    .btn-clear:hover:not(:disabled) {
+        background: #5a6268;
+    }
+
+    .btn-filter:disabled,
+    .btn-clear:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+.trial-balance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+    .trial-balance-table th {
+        background: #f8f9fa;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+        color: #333;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .trial-balance-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .trial-balance-table tbody tr:hover {
+        background: #f5f5f5;
+    }
+
+.amount-header {
+    text-align: right;
+}
+
+.amount-cell {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+}
+
+.trial-balance-table tfoot {
+    background: #e9ecef;
+    font-weight: 600;
+}
+
+.total-label {
+    text-align: right;
+    color: #495057;
+}
+
+.total-amount {
+    color: #28a745;
+}
+
+.balanced {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.unbalanced {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px !important;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c6cb;
+}

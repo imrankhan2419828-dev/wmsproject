@@ -1,0 +1,149 @@
+﻿/* assets/css/layout.css */
+/*.app-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+}*/
+
+/* Sidebar - Fixed width */
+/*.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+    transition: var(--transition);
+    z-index: 100;
+}
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed);
+    }*/
+
+/* Main Content Area */
+/*.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: calc(100% - var(--sidebar-width));
+    transition: var(--transition);
+}*/
+
+    /* Jab sidebar collapsed ho */
+    /*.sidebar.collapsed + .main-content,
+    .main-content.sidebar-collapsed {
+        width: calc(100% - var(--sidebar-collapsed));
+    }*/
+
+/* Header - Fixed at top */
+/*.header {
+    height: var(--header-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    flex-shrink: 0;
+}*/
+
+/* Page Content - YAHI SCROLL HOGA - FIXED VERSION */
+/*.page-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem;
+    height: calc(100vh - var(--header-height));
+    max-height: calc(100vh - var(--header-height));
+
+}*/
+
+/* Dashboard container */
+/*.dashboard {
+    min-height: 100%;
+    width: 100%;
+    animation: fadeIn 0.3s ease;
+    padding-bottom: 2rem;*/ /* Extra space at bottom */
+/*}*/
+
+    /* Ensure all content is visible */
+    /*.dashboard > *:last-child {
+        margin-bottom: 0;
+    }*/
+
+/* Mobile Styles */
+/*@media screen and (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar.collapsed {
+            width: var(--sidebar-width);*/ /* Mobile par collapsed nahi hoga */
+        /*}
+
+    .main-content {
+        width: 100% !important;
+    }
+
+    .page-content {
+        padding: 1rem;
+        height: calc(100vh - 60px);*/ /* Mobile header height */
+        /*max-height: calc(100vh - 60px);
+    }*/
+
+    /* Mobile header adjustment */
+    /*.header {
+        height: 60px;
+        padding: 0 1rem;
+    }*/
+
+    /* Dashboard mobile adjustments */
+    /*.dashboard {
+        padding-bottom: 1rem;
+    }
+}*/
+
+/* Tablet Styles */
+/*@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .page-content {
+        padding: 1.2rem;
+    }
+}*/
+
+/* Scrollbar styling for page-content */
+/*.page-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.page-content::-webkit-scrollbar-track {
+    background: var(--glass-bg);
+}
+
+.page-content::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 10px;
+}
+
+    .page-content::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-blue);
+    }*/
+
+/* For Firefox */
+/*.page-content {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) var(--glass-bg);
+}*/

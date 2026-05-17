@@ -1,0 +1,227 @@
+﻿.journal-popup-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    padding: var(--spacing-2);
+}
+
+.form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    gap: var(--spacing-4);
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .field-group label {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+.compact-select {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+}
+
+.items-section {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4);
+    background: var(--bg-secondary);
+}
+
+.items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-3);
+    font-weight: var(--font-semibold);
+}
+
+.error-message {
+    background: var(--danger-light);
+    color: var(--danger-dark);
+    padding: var(--spacing-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-3);
+}
+
+.items-table-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+    .items-table th {
+        background: var(--bg-tertiary);
+        padding: 10px 8px;
+        text-align: left;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+    }
+
+    .items-table td {
+        padding: 8px;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+.table-select, .table-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
+    .table-input.error {
+        border-color: var(--danger);
+    }
+
+.remove-row-btn {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    color: var(--danger);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+    .remove-row-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+.items-total {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-5);
+    margin-top: var(--spacing-3);
+    padding-top: var(--spacing-3);
+    border-top: 1px solid var(--border-light);
+}
+
+.popup-footer {
+    display: flex;
+    gap: var(--spacing-3);
+    justify-content: flex-end;
+}
+
+@media (max-width: 700px) {
+    .form-row-3 {
+        grid-template-columns: 1fr;
+    }
+}
+.error-text {
+    font-size: 11px;
+    color: var(--danger);
+    margin-top: 2px;
+}
+
+.table-input.error {
+    border-color: var(--danger);
+}
+
+/* Pair styling */
+.pair-separator td {
+    padding: 4px 0 !important;
+    border: none !important;
+}
+
+.pair-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+
+    .pair-divider::before,
+    .pair-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #e2e8f0;
+    }
+
+    .pair-divider span {
+        font-size: 11px;
+        font-weight: 600;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+.pair-start {
+    background: #f8fafc;
+}
+
+.pair-end {
+    background: #ffffff;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.type-dr {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.type-cr {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.pair-info {
+    padding: 8px 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+    .pair-info small {
+        color: #3b82f6;
+        font-size: 12px;
+    }
+
+.items-total {
+    display: flex;
+    gap: 20px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 6px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.total-dr {
+    color: #dc2626;
+}
+
+.total-cr {
+    color: #16a34a;
+}
+
+.total-diff {
+    color: #f59e0b;
+    margin-left: auto;
+}

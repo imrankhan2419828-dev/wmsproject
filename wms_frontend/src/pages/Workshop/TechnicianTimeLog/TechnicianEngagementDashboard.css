@@ -1,0 +1,167 @@
+﻿.engagement-dashboard {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-4);
+}
+
+.engagement-stats {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+}
+
+    .engagement-stats .stat-card {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-3);
+        padding: var(--spacing-3);
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+    }
+
+        .engagement-stats .stat-card.engaged svg {
+            color: #dc3545;
+        }
+
+        .engagement-stats .stat-card.free svg {
+            color: #28a745;
+        }
+
+        .engagement-stats .stat-card.total svg {
+            color: var(--primary);
+        }
+
+    .engagement-stats .stat-value {
+        font-size: 24px;
+        font-weight: var(--font-bold);
+        display: block;
+    }
+
+    .engagement-stats .stat-label {
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+.engagement-filters {
+    display: flex;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 6px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all var(--transition-fast);
+}
+
+    .filter-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+.refresh-btn {
+    padding: 6px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.technician-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-4);
+}
+
+.technician-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+    .technician-card.engaged {
+        border-left: 4px solid #dc3545;
+    }
+
+    .technician-card.free {
+        border-left: 4px solid #28a745;
+    }
+
+.technician-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+}
+
+.technician-avatar svg {
+    font-size: 24px;
+}
+
+.technician-card.engaged .technician-avatar svg {
+    color: #dc3545;
+}
+
+.technician-card.free .technician-avatar svg {
+    color: #28a745;
+}
+
+.technician-info h4 {
+    margin: 0;
+    font-size: var(--font-base);
+}
+
+.employee-code {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.status-badge {
+    margin-left: auto;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+    .status-badge.engaged {
+        background: rgba(220, 53, 69, 0.1);
+        color: #dc3545;
+    }
+
+    .status-badge.free {
+        background: rgba(40, 167, 69, 0.1);
+        color: #28a745;
+    }
+
+.technician-details {
+    padding: var(--spacing-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.engaged-info {
+    color: #dc3545;
+}
+
+.free-info {
+    color: #28a745;
+}

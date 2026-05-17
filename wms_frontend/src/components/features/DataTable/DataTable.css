@@ -1,0 +1,187 @@
+﻿/* ==================== DATA TABLE COMPONENT ==================== */
+
+.data-table-wrapper {
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-sm);
+    min-width: 600px;
+}
+
+    /* Header */
+    .data-table thead {
+        background: var(--bg-secondary);
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .data-table th {
+        padding: var(--spacing-md) var(--spacing-lg);
+        text-align: left;
+        font-weight: var(--font-semibold);
+        color: var(--text-primary);
+        white-space: nowrap;
+    }
+
+.th-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.data-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background var(--transition-fast);
+}
+
+    .data-table th.sortable:hover {
+        background: var(--bg-tertiary);
+    }
+
+.sort-icon {
+    display: inline-flex;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Body */
+.data-table td {
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+    white-space: nowrap;
+}
+
+.data-table tbody tr {
+    transition: background var(--transition-fast);
+}
+
+    .data-table tbody tr:hover {
+        background: var(--bg-secondary);
+    }
+
+    .data-table tbody tr.selected {
+        background: rgba(var(--primary-rgb), 0.05);
+    }
+
+    .data-table tbody tr.clickable {
+        cursor: pointer;
+    }
+
+/* Cell Alignments */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Checkbox Cell */
+.checkbox-cell {
+    width: 40px;
+    text-align: center;
+}
+
+    .checkbox-cell input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        accent-color: var(--primary);
+    }
+
+/* Actions Cell */
+.actions-cell {
+    text-align: center;
+    width: 100px;
+}
+
+.row-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+    .row-actions .btn {
+        min-width: auto;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+    }
+
+    .row-actions .delete-btn {
+        color: var(--danger);
+    }
+
+        .row-actions .delete-btn:hover {
+            background: var(--danger-light);
+            color: var(--danger-dark);
+        }
+
+/* Loading State */
+.loading-cell {
+    text-align: center;
+    padding: var(--spacing-3xl) !important;
+}
+
+.table-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: var(--text-muted);
+}
+
+    .table-loader .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--border-color);
+        border-top-color: var(--primary);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+/* Empty State */
+.empty-cell {
+    text-align: center;
+    padding: var(--spacing-3xl) !important;
+    color: var(--text-muted);
+    font-size: var(--font-base);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .data-table th,
+    .data-table td {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .row-actions .btn {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

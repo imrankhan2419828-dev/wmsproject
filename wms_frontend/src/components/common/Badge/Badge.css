@@ -1,0 +1,128 @@
+﻿/* ==================== BADGE COMPONENT ==================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    font-weight: var(--font-medium);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+/* Sizes */
+.badge-sm {
+    padding: 2px 6px;
+    font-size: 10px;
+    border-radius: var(--radius-sm);
+}
+
+.badge-md {
+    padding: 4px 8px;
+    font-size: var(--font-xs);
+    border-radius: var(--radius-md);
+}
+
+.badge-lg {
+    padding: 6px 12px;
+    font-size: var(--font-sm);
+    border-radius: var(--radius-md);
+}
+
+.badge-rounded {
+    border-radius: var(--radius-full);
+}
+
+/* Variants */
+.badge-default {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.badge-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.badge-success {
+    background: var(--success);
+    color: var(--white);
+}
+
+.badge-danger {
+    background: var(--danger);
+    color: var(--white);
+}
+
+.badge-warning {
+    background: var(--warning);
+    color: var(--white);
+}
+
+.badge-info {
+    background: var(--info);
+    color: var(--white);
+}
+
+/* Outline Variants */
+.badge-outline-primary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.badge-outline-success {
+    background: transparent;
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.badge-outline-danger {
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.badge-outline-warning {
+    background: transparent;
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+/* Light Variants */
+.badge-light-success {
+    background: var(--success-light);
+    color: var(--success-dark);
+}
+
+.badge-light-danger {
+    background: var(--danger-light);
+    color: var(--danger-dark);
+}
+
+.badge-light-warning {
+    background: var(--warning-light);
+    color: var(--warning-dark);
+}
+
+.badge-light-info {
+    background: var(--info-light);
+    color: var(--info-dark);
+}
+
+/* Dot Badge */
+.badge-dot {
+    padding-left: 6px;
+}
+
+.badge-dot-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: currentColor;
+}
+
+.badge-sm .badge-dot-indicator {
+    width: 6px;
+    height: 6px;
+}

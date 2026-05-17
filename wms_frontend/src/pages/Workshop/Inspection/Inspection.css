@@ -1,0 +1,460 @@
+﻿/* Inspection Module - Centralized Theme */
+.inspection-page-premium,
+.job-inspection-page-premium {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+    padding: var(--spacing-5);
+}
+
+/* Job Selector */
+.job-selector-wrapper {
+    max-width: 400px;
+}
+
+    .job-selector-wrapper label {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-bottom: 4px;
+        display: block;
+    }
+
+/* Cards Grid */
+.inspection-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+/* Template Card */
+.inspection-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-4);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-fast);
+}
+
+    .inspection-card:hover {
+        box-shadow: var(--shadow-md);
+    }
+
+.inspection-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.card-info {
+    flex: 1;
+}
+
+    .card-info h4 {
+        margin: 0 0 4px 0;
+        font-size: var(--font-base);
+        font-weight: var(--font-semibold);
+    }
+
+    .card-info span {
+        font-size: var(--font-xs);
+        color: var(--text-secondary);
+    }
+
+.card-actions {
+    display: flex;
+    gap: var(--spacing-1);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .card-btn.items {
+        color: var(--info);
+    }
+
+        .card-btn.items:hover {
+            background: var(--info-light);
+        }
+
+    .card-btn.edit {
+        color: var(--primary);
+    }
+
+        .card-btn.edit:hover {
+            background: var(--primary-light);
+        }
+
+    .card-btn.delete {
+        color: var(--danger);
+    }
+
+        .card-btn.delete:hover {
+            background: var(--danger-light);
+        }
+
+    .card-btn.expand {
+        color: var(--text-secondary);
+    }
+
+        .card-btn.expand:hover {
+            background: var(--bg-secondary);
+        }
+
+.inspection-card-body {
+    margin-top: var(--spacing-3);
+    padding-top: var(--spacing-3);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--radius-md);
+}
+
+/* Inspection Result Card */
+.inspection-result-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-4);
+    border: 1px solid var(--border-light);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-3);
+}
+
+.header-info h4 {
+    margin: 0;
+    font-size: var(--font-base);
+}
+
+.template-name {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.card-stats {
+    display: flex;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+}
+
+    .card-stats span {
+        font-size: var(--font-sm);
+    }
+
+    .card-stats .pass {
+        color: var(--success);
+    }
+
+    .card-stats .fail {
+        color: var(--danger);
+    }
+
+    .card-stats .pending {
+        color: var(--warning);
+    }
+
+.card-footer {
+    display: flex;
+    gap: var(--spacing-2);
+    padding-top: var(--spacing-3);
+    border-top: 1px solid var(--border-light);
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all var(--transition-fast);
+}
+
+    .action-btn.view {
+        background: var(--info-light);
+        color: var(--info-dark);
+    }
+
+    .action-btn.start {
+        background: var(--success-light);
+        color: var(--success-dark);
+    }
+
+    .action-btn.continue {
+        background: var(--primary-light);
+        color: var(--primary-dark);
+    }
+
+    .action-btn.delete {
+        background: var(--danger-light);
+        color: var(--danger-dark);
+    }
+
+    .action-btn:hover {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+
+/* Status Badges */
+.inspection-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .inspection-status-badge.pending {
+        background: var(--warning-light);
+        color: var(--warning-dark);
+    }
+
+    .inspection-status-badge.in-progress {
+        background: var(--info-light);
+        color: var(--info-dark);
+    }
+
+    .inspection-status-badge.completed {
+        background: var(--success-light);
+        color: var(--success-dark);
+    }
+
+    .inspection-status-badge.passed {
+        background: var(--success-light);
+        color: var(--success-dark);
+    }
+
+    .inspection-status-badge.failed {
+        background: var(--danger-light);
+        color: var(--danger-dark);
+    }
+
+.status-badge.active {
+    background: var(--success-light);
+    color: var(--success-dark);
+}
+
+.status-badge.inactive {
+    background: var(--danger-light);
+    color: var(--danger-dark);
+}
+
+/* Summary Grid */
+.inspection-summary-grid {
+    display: flex;
+    gap: var(--spacing-4);
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    flex: 1;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3);
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+    .summary-card span {
+        display: block;
+        font-size: 24px;
+        font-weight: var(--font-bold);
+    }
+
+    .summary-card.total span {
+        color: var(--primary);
+    }
+
+    .summary-card.pending span {
+        color: var(--warning);
+    }
+
+    .summary-card.progress span {
+        color: var(--info);
+    }
+
+    .summary-card.completed span {
+        color: var(--success);
+    }
+
+    .summary-card label {
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+/* Modal Container */
+.inspection-modal-container,
+.inspection-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 4px;
+}
+
+/* Items Grid */
+.items-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.item-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3);
+    border: 1px solid var(--border-light);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2);
+}
+
+.item-name {
+    font-weight: var(--font-semibold);
+}
+
+.item-type {
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 2px 8px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-full);
+}
+
+.item-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2);
+}
+
+.item-options {
+    margin-top: var(--spacing-2);
+    padding-top: var(--spacing-2);
+    border-top: 1px solid var(--border-light);
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.result-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* Loading */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-8);
+    gap: var(--spacing-3);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-4);
+}
+
+    .pagination button {
+        padding: var(--spacing-2) var(--spacing-4);
+        background: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+    }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .inspection-page-premium,
+    .job-inspection-page-premium {
+        padding: var(--spacing-3);
+    }
+
+    .inspection-summary-grid {
+        gap: var(--spacing-2);
+    }
+
+    .card-footer {
+        flex-wrap: wrap;
+    }
+
+    .action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}

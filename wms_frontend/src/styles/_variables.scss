@@ -1,0 +1,164 @@
+﻿// ================= COLOR SYSTEM =================
+:root {
+    // Primary Colors
+    --primary: #004F98;
+    --primary-dark: #003366;
+    --primary-light: #3370b3;
+    --primary-rgb: 0, 79, 152;
+    // Status Colors
+    --success: #28a745;
+    --success-dark: #218838;
+    --danger: #dc3545;
+    --danger-dark: #c82333;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    // Neutral Colors
+    --white: #ffffff;
+    --black: #000000;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    // Theme Specific (Light)
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --bg-tertiary: #e5e7eb;
+    --bg-glass: rgba(0, 79, 152, 0.05);
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --border-color: #e5e7eb;
+    --border-light: #f3f4f6;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    // Spacing (Mobile First - Smaller)
+    --spacing-xs: 0.5rem; // 8px
+    --spacing-sm: 0.75rem; // 12px
+    --spacing-md: 1rem; // 16px
+    --spacing-lg: 1.5rem; // 24px
+    --spacing-xl: 2rem; // 32px
+    --spacing-2xl: 2.5rem; // 40px
+    // Border Radius
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+    // Layout (Mobile First)
+    --sidebar-width: 280px;
+    --sidebar-collapsed: 72px;
+    --header-height: 60px;
+    // Transitions
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+    // Z-index
+    --z-mobile-menu: 1000;
+    --z-header: 100;
+    --z-dropdown: 200;
+    --z-modal: 300;
+    --z-toast: 400;
+}
+
+// ================= DARK THEME =================
+[data-theme="dark"] {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --border-color: #374151;
+    --border-light: #1f2937;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+// ================= BREAKPOINTS (Mobile First) =================
+$mobile: 640px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+
+// ================= MIXINS =================
+@mixin mobile-only {
+    @media (max-width: #{$mobile - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) and (max-width: #{$laptop - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin laptop-up {
+    @media (min-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+// Utility Mixins
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-md);
+
+    @include tablet-up {
+        padding: var(--spacing-lg);
+    }
+}
+
+@mixin glass-effect {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}

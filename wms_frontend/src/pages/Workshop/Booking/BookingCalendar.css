@@ -1,0 +1,211 @@
+﻿/* Booking Calendar - No Global Conflicts */
+.booking-calendar-modern {
+    position: relative;
+    padding: 20px;
+}
+
+/* Status Summary */
+.booking-status-summary {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.booking-status-card {
+    flex: 1;
+    min-width: 100px;
+    background: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    border-left: 4px solid;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.booking-status-icon {
+    font-size: 24px;
+}
+
+.booking-status-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-status-count {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.booking-status-label {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+/* Calendar Container */
+.calendar-container {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    position: relative;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Context Menu - FIXED POSITION */
+.booking-context-menu {
+    position: fixed !important;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 200px;
+    max-width: 280px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    z-index: 10000;
+    animation: menuFadeIn 0.2s ease;
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.booking-context-menu .menu-header {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    font-weight: 600;
+    font-size: 12px !important;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+    .booking-context-menu .menu-header .priority-badge {
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+.booking-context-menu .menu-item {
+    padding: 6px 12px !important;
+    cursor: pointer;
+    font-size: 11px !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+    color: #212529;
+}
+
+    .booking-context-menu .menu-item:hover {
+        background: #f0f0f0;
+    }
+
+    .booking-context-menu .menu-item svg {
+        font-size: 12px;
+    }
+
+.booking-context-menu .menu-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 4px 0;
+}
+
+.booking-context-menu .menu-subheader {
+    padding: 4px 12px !important;
+    font-size: 9px !important;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    letter-spacing: 0.5px;
+}
+
+.booking-context-menu .delete-item {
+    color: #dc3545 !important;
+}
+
+    .booking-context-menu .delete-item:hover {
+        background: rgba(220, 53, 69, 0.1) !important;
+    }
+
+/* Calendar Date Cell Styling */
+.booking-calendar-modern .rbc-day-bg {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .booking-calendar-modern .rbc-day-bg:hover {
+        background: rgba(0, 123, 255, 0.05) !important;
+    }
+
+/* Past date styling */
+.booking-calendar-modern .rbc-row-bg .rbc-day-bg.rbc-past {
+    opacity: 0.7;
+}
+
+/* Event styling */
+.booking-calendar-modern .rbc-event {
+    border-radius: 4px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .booking-calendar-modern {
+        padding: 10px;
+    }
+
+    .booking-status-summary {
+        gap: 8px;
+    }
+
+    .booking-status-card {
+        min-width: 80px;
+        padding: 8px 12px;
+    }
+
+    .booking-status-icon {
+        font-size: 18px;
+    }
+
+    .booking-status-count {
+        font-size: 18px;
+    }
+
+    .booking-context-menu {
+        min-width: 180px;
+        max-width: 240px;
+    }
+
+        .booking-context-menu .menu-item {
+            font-size: 10px !important;
+            padding: 5px 10px !important;
+        }
+}

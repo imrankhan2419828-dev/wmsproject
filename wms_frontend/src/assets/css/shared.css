@@ -1,0 +1,66 @@
+﻿/* shared.css - Common variables and utilities */
+:root {
+    --primary-blue: #004F98;
+    --primary-dark: #003366;
+    --primary-light: #3370b3;
+    --primary-rgb: 0, 79, 152;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px rgba(var(--primary-rgb), 0.2);
+    --text-light: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --sidebar-width: 260px;
+    --sidebar-collapsed: 70px;
+    --header-height: 70px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+    min-height: 100vh;
+    color: var(--text-light);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--glass-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-blue);
+    }
+
+/* Add to shared.css */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure proper touch handling on mobile */
+@media (max-width: 768px) {
+    .sidebar,
+    .menu-toggle,
+    .sidebar-overlay {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+}

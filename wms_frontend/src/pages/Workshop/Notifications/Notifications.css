@@ -1,0 +1,292 @@
+﻿/* Notification Module - Centralized Theme */
+.notification-page-premium, .preferences-page-premium {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+    padding: var(--spacing-5);
+}
+
+/* Cards Grid */
+.notification-cards-grid, .notif-cards-grid, .history-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.notification-card, .notif-card, .history-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-4);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-fast);
+}
+
+.notification-card-header, .notif-card-header, .history-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.card-icon, .notif-icon, .history-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.card-info, .notif-info {
+    flex: 1;
+}
+
+    .card-info h4, .notif-info h4 {
+        margin: 0 0 4px 0;
+        font-size: var(--font-base);
+        font-weight: var(--font-semibold);
+    }
+
+.card-actions {
+    display: flex;
+    gap: var(--spacing-1);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .card-btn.edit {
+        color: var(--primary);
+    }
+
+    .card-btn.delete {
+        color: var(--danger);
+    }
+
+    .card-btn.edit:hover {
+        background: var(--primary-light);
+    }
+
+    .card-btn.delete:hover {
+        background: var(--danger-light);
+    }
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .status-badge.active {
+        background: var(--success-light);
+        color: var(--success-dark);
+    }
+
+    .status-badge.inactive {
+        background: var(--danger-light);
+        color: var(--danger-dark);
+    }
+
+.notif-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .notif-status-badge.pending {
+        background: var(--warning-light);
+        color: var(--warning-dark);
+    }
+
+    .notif-status-badge.sent {
+        background: var(--info-light);
+        color: var(--info-dark);
+    }
+
+    .notif-status-badge.delivered {
+        background: var(--success-light);
+        color: var(--success-dark);
+    }
+
+    .notif-status-badge.failed {
+        background: var(--danger-light);
+        color: var(--danger-dark);
+    }
+
+.history-status {
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .history-status.pending {
+        background: var(--warning-light);
+        color: var(--warning-dark);
+    }
+
+    .history-status.sent {
+        background: var(--info-light);
+        color: var(--info-dark);
+    }
+
+    .history-status.delivered {
+        background: var(--success-light);
+        color: var(--success-dark);
+    }
+
+    .history-status.failed {
+        background: var(--danger-light);
+        color: var(--danger-dark);
+    }
+
+/* Stats Cards */
+.stats-cards {
+    display: flex;
+    gap: var(--spacing-4);
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3);
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: var(--font-bold);
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+/* Preferences Layout */
+.preferences-layout {
+    display: flex;
+    gap: var(--spacing-5);
+    flex-wrap: wrap;
+}
+
+.customer-list-panel {
+    width: 300px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.customer-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.customer-item {
+    padding: var(--spacing-3);
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-light);
+    transition: background var(--transition-fast);
+}
+
+    .customer-item:hover {
+        background: var(--bg-secondary);
+    }
+
+    .customer-item.selected {
+        background: rgba(var(--primary-rgb), 0.1);
+        border-left: 3px solid var(--primary);
+    }
+
+.customer-name {
+    font-weight: var(--font-semibold);
+}
+
+.customer-phone {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.preferences-form-panel {
+    flex: 1;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-5);
+    border: 1px solid var(--border-light);
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: var(--spacing-5);
+    padding-bottom: var(--spacing-3);
+    border-bottom: 1px solid var(--border-light);
+}
+
+    .form-section h4 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: var(--spacing-3);
+        font-size: var(--font-base);
+        color: var(--text-primary);
+    }
+
+/* Notification Modal */
+.notification-modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 4px;
+}
+
+.notification-modal-footer {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notification-page-premium, .preferences-page-premium {
+        padding: var(--spacing-3);
+    }
+
+    .preferences-layout {
+        flex-direction: column;
+    }
+
+    .customer-list-panel {
+        width: 100%;
+    }
+
+    .stats-cards {
+        gap: var(--spacing-2);
+    }
+
+    .notification-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+        .notification-modal-footer button {
+            width: 100%;
+        }
+}

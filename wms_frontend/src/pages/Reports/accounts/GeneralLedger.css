@@ -1,0 +1,317 @@
+﻿.general-ledger {
+    padding: 0;
+    background: transparent;
+}
+
+.ledger-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #334155;
+}
+
+    .ledger-header h3 {
+        margin: 0;
+        color: #e2e8f0;
+        font-size: 18px;
+    }
+
+.report-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-excel {
+    background: #1e7e34;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+    .btn-excel:hover {
+        background: #166534;
+    }
+
+.btn-pdf {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+    .btn-pdf:hover {
+        background: #b91c1c;
+    }
+
+.btn-print {
+    background: #4361ee;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+    .btn-print:hover {
+        background: #3a56d4;
+    }
+
+.ledger-filters {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #1e293b;
+    border-radius: 10px;
+    border: 1px solid #334155;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .filter-group label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #94a3b8;
+        text-transform: uppercase;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        padding: 8px 12px;
+        border: 1px solid #475569;
+        border-radius: 6px;
+        font-size: 14px;
+        min-width: 160px;
+        background: #0f172a;
+        color: #e2e8f0;
+    }
+
+        .filter-group input:focus,
+        .filter-group select:focus {
+            outline: none;
+            border-color: #4361ee;
+        }
+
+.btn-search {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+    .btn-search:hover {
+        background: #218838;
+    }
+
+.error-message {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #f87171;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    color: #4361ee;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #334155;
+    border-top-color: #4361ee;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.report-header-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+    .report-header-section h2 {
+        color: #e2e8f0;
+        margin: 0 0 10px 0;
+    }
+
+.company-info p {
+    color: #94a3b8;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.account-info {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+}
+
+    .account-info h4 {
+        margin: 0 0 10px 0;
+        color: #e2e8f0;
+        font-size: 14px;
+    }
+
+.balance-info {
+    display: flex;
+    gap: 30px;
+    font-size: 13px;
+}
+
+    .balance-info span {
+        background: #0f172a;
+        padding: 4px 12px;
+        border-radius: 20px;
+        color: #cbd5e1;
+        border: 1px solid #334155;
+    }
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+    .ledger-table th,
+    .ledger-table td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #334155;
+        color: #e2e8f0;
+    }
+
+    .ledger-table th {
+        background: #1e293b;
+        font-weight: 600;
+        color: #94a3b8;
+        position: sticky;
+        top: 0;
+    }
+
+.amount {
+    text-align: right;
+}
+
+.debit {
+    color: #f87171;
+}
+
+.credit {
+    color: #4ade80;
+}
+
+.total-row {
+    background: #1e293b;
+    font-weight: 600;
+}
+
+    .total-row td {
+        border-top: 2px solid #334155;
+        border-bottom: none;
+    }
+
+.no-data {
+    text-align: center !important;
+    padding: 40px !important;
+    color: #64748b;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .general-ledger {
+        padding: 0;
+        background: white;
+    }
+
+    .ledger-table th,
+    .ledger-table td {
+        color: black;
+        border-color: #ddd;
+    }
+
+    .ledger-table th {
+        background: #f2f2f2;
+    }
+
+    .debit {
+        color: #dc3545;
+    }
+
+    .credit {
+        color: #28a745;
+    }
+
+    .balance-info span {
+        background: #f8fafc;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+
+    .account-info {
+        background: #f8fafc;
+        border: 1px solid #ddd;
+    }
+
+    .report-header-section h2 {
+        color: #333;
+    }
+
+    .company-info p {
+        color: #666;
+    }
+}

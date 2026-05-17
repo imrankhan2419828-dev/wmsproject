@@ -1,0 +1,471 @@
+﻿/* ==================== BUTTON COMPONENT ==================== */
+
+/*.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}*/
+
+/* Button Text */
+/*.btn-text {
+    line-height: 1;
+}*/
+
+/* Button Icons */
+/*.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+}
+
+.btn-icon-left {
+    margin-right: var(--spacing-xs);
+}
+
+.btn-icon-right {
+    margin-left: var(--spacing-xs);
+}
+
+.btn-icon-only {
+    padding: 0 !important;
+    aspect-ratio: 1 / 1;
+}
+
+    .btn-icon-only .btn-icon {
+        margin: 0;
+        font-size: 1.25rem;
+    }*/
+
+/* ===== SIZES ===== */
+/*.btn-sm {
+    height: var(--input-height-sm);
+    padding: 0 var(--spacing-md);
+    font-size: var(--font-xs);
+    min-width: 70px;
+}
+
+    .btn-sm.btn-icon-only {
+        width: var(--input-height-sm);
+        min-width: auto;
+    }
+
+.btn-md {
+    height: var(--input-height);
+    padding: 0 var(--spacing-lg);
+    font-size: var(--font-sm);
+    min-width: 90px;
+}
+
+    .btn-md.btn-icon-only {
+        width: var(--input-height);
+        min-width: auto;
+    }
+
+.btn-lg {
+    height: var(--input-height-lg);
+    padding: 0 var(--spacing-xl);
+    font-size: var(--font-base);
+    min-width: 110px;
+}
+
+    .btn-lg.btn-icon-only {
+        width: var(--input-height-lg);
+        min-width: auto;
+    }*/
+
+/* ===== VARIANTS ===== */
+
+/* Primary */
+/*.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+    .btn-primary:hover:not(:disabled) {
+        background: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:active:not(:disabled) {
+        transform: translateY(0);
+        box-shadow: var(--shadow-sm);
+    }*/
+
+/* Secondary */
+/*.btn-secondary {
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+}
+
+    .btn-secondary:hover:not(:disabled) {
+        background: var(--secondary-dark);
+        border-color: var(--secondary-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }*/
+
+/* Success */
+/*.btn-success {
+    background: var(--success);
+    color: var(--white);
+    border-color: var(--success);
+}
+
+    .btn-success:hover:not(:disabled) {
+        background: var(--success-dark);
+        border-color: var(--success-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }*/
+
+/* Danger */
+/*.btn-danger {
+    background: var(--danger);
+    color: var(--white);
+    border-color: var(--danger);
+}
+
+    .btn-danger:hover:not(:disabled) {
+        background: var(--danger-dark);
+        border-color: var(--danger-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }*/
+
+/* Warning */
+/*.btn-warning {
+    background: var(--warning);
+    color: var(--white);
+    border-color: var(--warning);
+}
+
+    .btn-warning:hover:not(:disabled) {
+        background: var(--warning-dark);
+        border-color: var(--warning-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }*/
+
+/* Outline */
+/*.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+    .btn-outline:hover:not(:disabled) {
+        background: var(--bg-secondary);
+        border-color: var(--border-dark);
+        transform: translateY(-1px);
+    }*/
+
+/* Ghost */
+/*.btn-ghost {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: transparent;
+}
+
+    .btn-ghost:hover:not(:disabled) {
+        background: var(--bg-secondary);
+    }*/
+
+/* Link */
+/*.btn-link {
+    background: transparent;
+    color: var(--primary);
+    border-color: transparent;
+    min-width: auto;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+}
+
+    .btn-link:hover:not(:disabled) {
+        color: var(--primary-dark);
+        text-decoration: underline;
+        background: transparent;
+    }*/
+
+/* ===== FULL WIDTH ===== */
+/*.btn-full {
+    width: 100%;
+}*/
+
+/* ===== DISABLED STATE ===== */
+/*.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}*/
+
+/* ===== LOADING STATE ===== */
+/*.btn-loading {
+    cursor: wait;
+}
+
+.btn-spinner {
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--white);
+    animation: spin 0.6s linear infinite;
+}
+
+.btn-outline .btn-spinner,
+.btn-ghost .btn-spinner,
+.btn-link .btn-spinner {
+    border-color: rgba(0, 79, 152, 0.2);
+    border-top-color: var(--primary);
+}*/
+
+/* ===== RIPPLE EFFECT ===== */
+/*.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-outline:active::before,
+.btn-ghost:active::before,
+.btn-link:active::before {
+    background: rgba(0, 79, 152, 0.1);
+}*/
+
+/* ===== MOBILE OPTIMIZATION ===== */
+/*@media (max-width: 640px) {
+    .btn-md {
+        min-width: 80px;
+    }
+
+    .btn-lg {
+        min-width: 100px;
+    }
+}*/
+/* ===== CUSTOM GREEN (SAVE / UPDATE) ===== */
+/*.btn-green {
+    background: linear-gradient(135deg, #1f6f0b 0%, #2e920d 50%, #6bdc3a 100%);
+    color: var(--white);
+    border-color: transparent;
+}
+
+    .btn-green:hover:not(:disabled) {
+        filter: brightness(0.95);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }*/
+
+/* ===== CUSTOM RED (CANCEL / DELETE) ===== */
+/*.btn-red {
+    background: linear-gradient(135deg, #7a0b0b 0%, #d11a1a 50%, #ff4d4d 100%);
+    color: var(--white);
+    border-color: transparent;
+}
+
+    .btn-red:hover:not(:disabled) {
+        filter: brightness(0.95);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }*/
+
+/* ==================== BUTTON COMPONENT - GLASS BLUE ==================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+    /* ✨ SHINE EFFECT */
+    .btn::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--shine-overlay);
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    .btn:hover::after {
+        opacity: 1;
+    }
+
+/* ===== PRIMARY ===== */
+.btn-primary {
+    background: var(--primary-gradient);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.15);
+}
+
+    .btn-primary:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(0, 102, 255, 0.7);
+    }
+
+/* ===== SECONDARY ===== */
+.btn-secondary {
+    background: rgba(100, 116, 139, 0.15);
+    color: var(--secondary);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+    .btn-secondary:hover:not(:disabled) {
+        background: var(--secondary);
+        color: white;
+        transform: translateY(-1px);
+    }
+
+/* ===== SUCCESS ===== */
+.btn-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+    .btn-success:hover:not(:disabled) {
+        background: var(--success);
+        color: #fff;
+        box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+    }
+
+/* ===== DANGER ===== */
+.btn-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+    .btn-danger:hover:not(:disabled) {
+        background: var(--danger);
+        color: #fff;
+        box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+    }
+
+/* ===== WARNING ===== */
+.btn-warning {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--warning);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+    .btn-warning:hover:not(:disabled) {
+        background: var(--warning);
+        color: #fff;
+    }
+
+/* ===== OUTLINE ===== */
+.btn-outline {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+    .btn-outline:hover:not(:disabled) {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+    }
+
+/* ===== GHOST ===== */
+.btn-ghost {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+    .btn-ghost:hover:not(:disabled) {
+        background: rgba(0,102,255,0.08);
+    }
+
+/* ===== LINK ===== */
+.btn-link {
+    background: transparent;
+    color: var(--primary);
+    border: none;
+}
+
+    .btn-link:hover:not(:disabled) {
+        text-decoration: underline;
+        color: var(--primary-light);
+    }
+
+/* ===== DISABLED ===== */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ===== LOADING ===== */
+.btn-spinner {
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* ===== RIPPLE ===== */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== REMOVE OLD GREEN/RED ===== */
+/* ❌ DELETE btn-green & btn-red (no longer needed) */

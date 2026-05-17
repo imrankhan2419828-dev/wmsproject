@@ -1,0 +1,382 @@
+﻿.voucher-detail-premium {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Card */
+.voucher-detail-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+}
+
+/* Title */
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.title-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+    .title-left h2 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #111827;
+        margin: 0;
+    }
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+    .status-badge.posted {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .status-badge.pending {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .status-badge.unbalanced {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+    .info-item svg {
+        color: #6b7280;
+        margin-top: 2px;
+    }
+
+    .info-item div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-item label {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 2px;
+    }
+
+    .info-item span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #111827;
+    }
+
+/* Description Section */
+.description-section {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: #f0fdf4;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+    .description-section svg {
+        color: #059669;
+    }
+
+    .description-section label {
+        font-size: 12px;
+        color: #059669;
+        margin-bottom: 4px;
+    }
+
+    .description-section p {
+        margin: 0;
+        font-size: 14px;
+        color: #111827;
+    }
+
+/* Reference Section */
+.reference-section {
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+    .reference-section label {
+        font-size: 14px;
+        color: #6b7280;
+    }
+
+    .reference-section span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #111827;
+    }
+
+/* Entries Section */
+.entries-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .detail-table th {
+        background: #f9fafb;
+        padding: 12px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #374151;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+        .detail-table th.text-right {
+            text-align: right;
+        }
+
+    .detail-table td {
+        padding: 12px 16px;
+        font-size: 14px;
+        color: #111827;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .detail-table tbody tr:hover {
+        background: #f9fafb;
+    }
+
+    .detail-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+.account-code {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.account-name {
+    font-weight: 500;
+}
+
+.amount {
+    text-align: right;
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+
+    .amount.debit {
+        color: #059669;
+    }
+
+    .amount.credit {
+        color: #dc2626;
+    }
+
+.remarks {
+    color: #6b7280;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Footer */
+.detail-table tfoot tr {
+    background: #f9fafb;
+    font-weight: 600;
+}
+
+.detail-table tfoot td {
+    padding: 14px 16px;
+    border-top: 2px solid #e5e7eb;
+}
+
+.total-label {
+    text-align: right;
+    font-weight: 600;
+}
+
+.amount.unbalanced {
+    color: #dc2626;
+}
+
+.difference-row td {
+    background: #fef2f2;
+    color: #dc2626;
+    font-size: 13px;
+}
+
+.amount.difference {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px !important;
+    color: #9ca3af;
+}
+
+/* Warning & Posted Messages */
+.warning-message,
+.posted-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 24px;
+}
+
+.warning-message {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.posted-indicator {
+    background: #dcfce7;
+    color: #166534;
+}
+
+    .warning-message svg,
+    .posted-indicator svg {
+        flex-shrink: 0;
+    }
+
+/* Loading & Error States */
+.loading-container,
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 16px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f4f6;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-container svg {
+    color: #9ca3af;
+}
+
+.error-container h3 {
+    font-size: 18px;
+    color: #374151;
+    margin: 0;
+}
+
+.error-container p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .voucher-detail-premium {
+        padding: 16px;
+    }
+
+    .voucher-detail-card {
+        padding: 16px;
+    }
+
+    .detail-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+        .header-actions button {
+            flex: 1;
+        }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-wrapper {
+        font-size: 12px;
+    }
+
+    .detail-table th,
+    .detail-table td {
+        padding: 8px;
+    }
+
+    .remarks {
+        max-width: 100px;
+    }
+}

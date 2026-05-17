@@ -1,0 +1,74 @@
+﻿.stock-page {
+    padding: 20px;
+}
+
+    .stock-page h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+.stock-checker {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+    .stock-checker input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .stock-checker button {
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .stock-checker button:hover:not(:disabled) {
+            background: #0056b3;
+        }
+
+        .stock-checker button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+.stock-result {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    max-width: 400px;
+}
+
+    .stock-result h3 {
+        margin: 0;
+        color: #333;
+    }
+
+.stock-value {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.loading {
+    color: #666;
+    font-style: italic;
+}
+
+.error {
+    color: #dc3545;
+    padding: 10px;
+    background: #f8d7da;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    max-width: 400px;
+}

@@ -1,0 +1,287 @@
+﻿/* BookingModal.css - XL Size Theme Matching Sales Form */
+.booking-modal-container-xl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5, 20px);
+    padding: var(--spacing-2, 8px);
+}
+
+/* Modal Title */
+.booking-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.booking-no-badge {
+    background: var(--primary-light, #e3f2fd);
+    color: var(--primary, #1976d2);
+    padding: 4px 10px;
+    border-radius: var(--radius-full, 20px);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Form Rows */
+.form-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-4, 16px);
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4, 16px);
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .form-group label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-secondary, #6c757d);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+.required {
+    color: var(--danger, #dc3545);
+    margin-left: 2px;
+}
+
+/* Form Inputs */
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color, #dee2e6);
+    border-radius: var(--radius-md, 8px);
+    background: var(--bg-primary, #ffffff);
+    color: var(--text-primary, #212529);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+        outline: none;
+        border-color: var(--primary, #1976d2);
+        box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+    }
+
+    .form-input:disabled, .form-select:disabled, .form-textarea:disabled {
+        background: var(--bg-secondary, #f8f9fa);
+        cursor: not-allowed;
+    }
+
+.form-input-sm {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid var(--border-color, #dee2e6);
+    border-radius: var(--radius-sm, 6px);
+    font-size: 13px;
+}
+
+/* Form Sections */
+.form-section {
+    border: 1px solid var(--border-light, #e9ecef);
+    border-radius: var(--radius-lg, 12px);
+    padding: var(--spacing-4, 16px);
+    background: var(--bg-secondary-light, #fafbfc);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4, 16px);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary, #212529);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light, #e9ecef);
+}
+
+.add-service-btn {
+    padding: 4px 12px !important;
+    font-size: 12px !important;
+}
+
+/* Services Table */
+.services-table-container {
+    border: 1px solid var(--border-light, #e9ecef);
+    border-radius: var(--radius-md, 8px);
+    overflow: hidden;
+}
+
+.services-table-header {
+    display: grid;
+    grid-template-columns: 2fr 0.8fr 2fr 0.5fr;
+    background: var(--bg-secondary, #f8f9fa);
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary, #6c757d);
+    border-bottom: 1px solid var(--border-color, #dee2e6);
+}
+
+.services-table-body {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.services-table-row {
+    display: grid;
+    grid-template-columns: 2fr 0.8fr 2fr 0.5fr;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-light, #e9ecef);
+    align-items: center;
+    gap: 8px;
+}
+
+.service-col, .time-col, .notes-col, .action-col {
+    padding: 0 4px;
+}
+
+.time-badge {
+    display: inline-block;
+    background: var(--info-light, #e3f2fd);
+    color: var(--info, #17a2b8);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm, 6px);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.remove-service-btn {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    color: var(--danger, #dc3545);
+    cursor: pointer;
+    border-radius: var(--radius-sm, 6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .remove-service-btn:hover:not(:disabled) {
+        background: rgba(220, 53, 69, 0.1);
+    }
+
+    .remove-service-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+/* Estimated Time Badge */
+.estimated-time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--primary-light, #e3f2fd);
+    border-radius: var(--radius-md, 8px);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--primary, #1976d2);
+}
+
+/* Messages */
+.error-message {
+    background: rgba(220, 53, 69, 0.1);
+    color: var(--danger, #dc3545);
+    padding: 8px 12px;
+    border-radius: var(--radius-md, 8px);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.error-text {
+    font-size: 11px;
+    color: var(--danger, #dc3545);
+    margin-top: 4px;
+}
+
+.info-text {
+    font-size: 11px;
+    color: var(--success, #28a745);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.warning-text {
+    color: var(--warning, #ffc107);
+    font-size: 11px;
+}
+
+.info-message {
+    background: var(--info-light, #e3f2fd);
+    color: var(--info, #17a2b8);
+    padding: 10px 12px;
+    border-radius: var(--radius-md, 8px);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.no-items-message {
+    text-align: center;
+    padding: var(--spacing-6, 24px);
+    color: var(--text-muted, #6c757d);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.option-sub {
+    font-size: 11px;
+    color: var(--text-muted, #6c757d);
+    margin-left: 8px;
+}
+
+/* Modal Footer */
+.booking-modal-footer {
+    display: flex;
+    gap: var(--spacing-3, 12px);
+    justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .form-row-3, .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-3, 12px);
+    }
+
+    .services-table-header, .services-table-row {
+        min-width: 550px;
+    }
+
+    .services-table-container {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .booking-modal-footer {
+        flex-wrap: wrap;
+    }
+
+        .booking-modal-footer button {
+            flex: 1;
+        }
+}

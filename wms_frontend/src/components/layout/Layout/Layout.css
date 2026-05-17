@@ -1,0 +1,79 @@
+﻿/* ==================== LAYOUT - SIDEBAR FULL HEIGHT ==================== */
+
+.app-layout {
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.layout-container {
+    display: block;
+    height: 100vh;
+}
+
+/* Main Content - Sidebar ke right side, Header ke neeche */
+.main-content {
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: var(--header-height);
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    transition: margin-left var(--transition-base);
+}
+
+.content-wrapper {
+    padding: var(--spacing-4);
+    min-height: 100%;
+}
+
+/* Sidebar Overlay - Mobile */
+.sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-overlay);
+    backdrop-filter: blur(2px);
+    z-index: calc(var(--z-mobile-menu) - 1);
+    animation: fadeIn 0.2s ease;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+    .main-content {
+        margin-left: var(--sidebar-width);
+    }
+
+    .app-layout.sidebar-collapsed .main-content {
+        margin-left: var(--sidebar-collapsed);
+    }
+
+    .content-wrapper {
+        padding: var(--spacing-5);
+    }
+
+    .sidebar-overlay {
+        display: none;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .content-wrapper {
+        padding: var(--spacing-6);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

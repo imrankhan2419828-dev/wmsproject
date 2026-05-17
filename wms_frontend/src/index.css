@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for Themes */
+:root {
+    /* Light Theme (Default) */
+    --bg-gradient-start: #003366;
+    --bg-gradient-mid: #004F98;
+    --bg-gradient-end: #3370b3;
+    /* Header Variables */
+    --header-bg: rgba(255, 255, 255, 0.1);
+    --header-border: rgba(255, 255, 255, 0.2);
+    --header-text: white;
+    --header-text-light: rgba(255, 255, 255, 0.8);
+    --header-icon: white;
+    --header-btn-bg: rgba(255, 255, 255, 0.1);
+    --header-btn-hover: rgba(255, 255, 255, 0.2);
+    /* Dropdown Variables */
+    --dropdown-bg: rgba(255, 255, 255, 0.95);
+    --dropdown-text: #004F98;
+    --dropdown-hover: rgba(0, 79, 152, 0.1);
+    /* Sidebar Variables */
+    --sidebar-bg: rgba(255, 255, 255, 0.1);
+    --sidebar-border: rgba(255, 255, 255, 0.2);
+    --sidebar-text: rgba(255, 255, 255, 0.7);
+    --sidebar-text-hover: white;
+    --sidebar-active-bg: rgba(255, 255, 255, 0.2);
+    /* Tooltip Variables */
+    --tooltip-bg: white;
+    --tooltip-text: #004F98;
+    --tooltip-border: #e0e0e0;
+    /* Spacing */
+    --sidebar-width: 260px;
+    --sidebar-collapsed: 70px;
+    --header-height: 64px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --z-header: 1000;
+    --z-mobile-menu: 1050;
+    --z-dropdown: 1100;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-gradient-start: #0a0a2a;
+    --bg-gradient-mid: #1a1a3a;
+    --bg-gradient-end: #2a2a4a;
+    --header-bg: rgba(0, 0, 0, 0.8);
+    --header-border: rgba(255, 255, 255, 0.1);
+    --header-text: white;
+    --header-text-light: rgba(255, 255, 255, 0.7);
+    --header-icon: white;
+    --header-btn-bg: rgba(255, 255, 255, 0.1);
+    --header-btn-hover: rgba(255, 255, 255, 0.2);
+    --dropdown-bg: #1a1a2e;
+    --dropdown-text: white;
+    --dropdown-hover: rgba(255, 255, 255, 0.1);
+    --sidebar-bg: rgba(0, 0, 0, 0.8);
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+    --sidebar-text: rgba(255, 255, 255, 0.7);
+    --sidebar-text-hover: white;
+    --sidebar-active-bg: rgba(255, 255, 255, 0.15);
+    --tooltip-bg: #1a1a2e;
+    --tooltip-text: white;
+    --tooltip-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+/* Utility Classes */
+.text-white {
+    color: white;
+}
+
+.bg-transparent {
+    background: transparent;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}

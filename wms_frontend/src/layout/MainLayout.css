@@ -1,0 +1,79 @@
+﻿/* ================= MAIN LAYOUT (Mobile First) ================= */
+/*.main-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-secondary);
+}*/
+
+/* ================= MAIN CONTENT ================= */
+/*.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    transition: margin-left var(--transition-base);
+}*/
+
+/* On tablet and above, add margin for sidebar */
+/*@media (min-width: 768px) {
+    .main-content {
+        margin-left: var(--sidebar-width);
+    }
+}*/
+
+/* ================= PAGE CONTENT ================= */
+/*.page-content {
+    flex: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+}*/
+
+/* Tablet and above */
+/*@media (min-width: 768px) {
+    .page-content {
+        padding: var(--spacing-lg);
+    }
+}*/
+
+/* Laptop and above */
+/*@media (min-width: 1024px) {
+    .page-content {
+        padding: var(--spacing-xl);
+    }
+}*/
+
+/* ================= SCROLLBAR ================= */
+/*.page-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.page-content::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.page-content::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+    .page-content::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+    }*/
+
+/* ================= ANIMATIONS ================= */
+/*@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-content {
+    animation: fadeInUp 0.3s ease;
+}*/
