@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+build/
+
+# env
+.env
+
+# visual studio
+.vs/
+bin/
+obj/
+
+# logs
+*.log
+
+# vscode
+.vscode/
+
+# database backups
+*.bak
