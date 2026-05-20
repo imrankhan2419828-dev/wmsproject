@@ -1,9 +1,108 @@
-﻿import React, { useState, useEffect } from "react";
+﻿//import React, { useState, useEffect } from "react";
+//import reportApi from "../../../api/reportApi";
+//import { getCoaTree } from "../../../api/coaApi";
+//import itemApi from "../../../api/itemApi";
+//import { FaSearch, FaChevronDown, FaChevronRight } from "react-icons/fa";
+//import ReportTemplate from "../ReportTemplate";
+
+//export default function SaleReport() {
+//    const [loading, setLoading] = useState(false);
+//    const [customers, setCustomers] = useState([]);
+//    const [items, setItems] = useState([]);
+//    const [selectedCustomer, setSelectedCustomer] = useState("");
+//    const [selectedItem, setSelectedItem] = useState("");
+//    const [fromDate, setFromDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().split('T')[0]);
+//    const [toDate, setToDate] = useState(new Date().toISOString().split('T')[0]);
+//    const [data, setData] = useState(null);
+//    const [error, setError] = useState("");
+//    const [expanded, setExpanded] = useState({});
+
+//    useEffect(() => { loadDropdowns(); }, []);
+
+//    const loadDropdowns = async () => {
+//        try {
+//            const [coaRes, itemRes] = await Promise.all([getCoaTree(), itemApi.getAll()]);
+//            let custList = [];
+//            const flatten = (tree) => {
+//                for (const acc of tree) {
+//                    const id = acc.acctID || acc.AcctID; const code = acc.AcctCode || acc.acctCode || "";
+//                    const name = acc.AcctName || acc.acctName || ""; const cat = (acc.AccountCategory || acc.accountCategory || "").trim();
+//                    if (acc.acctLast && cat === "Customer" && id) custList.push({ acctID: id, label: `${code} - ${name}` });
+//                    if (acc.children?.length) flatten(acc.children);
+//                }
+//            };
+//            flatten(coaRes.data?.data || coaRes.data || []);
+//            setCustomers(custList);
+//            setItems((itemRes.data?.data || itemRes.data || []).map(i => ({ itemID: i.itemID || i.ItemID, label: i.itemName || i.ItemName })));
+//        } catch (err) { }
+//    };
+
+//    const handleSearch = async () => {
+//        setLoading(true); setError("");
+//        try {
+//            const res = await reportApi.getSaleReport(fromDate, toDate, selectedCustomer || null, selectedItem || null);
+//            setData(res.data?.data || null); setExpanded({});
+//        } catch (err) { setError(err.response?.data?.message || "Failed"); }
+//        finally { setLoading(false); }
+//    };
+
+//    const toggleExpand = (id) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
+//    const formatDt = (d) => { if (!d) return ""; const dt = new Date(d); const m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; return `${String(dt.getDate()).padStart(2, '0')}-${m[dt.getMonth()]}-${dt.getFullYear()}`; };
+//    const f = (n) => new Intl.NumberFormat('en-PK', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n || 0);
+
+//    const totalAmount = data?.reduce((s, d) => s + (d.totalAmount || 0), 0) || 0;
+//    const totalQty = data?.reduce((s, d) => s + (d.totalQty || 0), 0) || 0;
+
+//    const filters = (
+//        <>
+//            <div className="rp-filter-group"><label>From</label><input type="date" value={fromDate} onChange={e => setFromDate(e.target.value)} /></div>
+//            <div className="rp-filter-group"><label>To</label><input type="date" value={toDate} onChange={e => setToDate(e.target.value)} /></div>
+//            <div className="rp-filter-group" style={{ minWidth: 180 }}><label>Customer</label><select value={selectedCustomer} onChange={e => setSelectedCustomer(e.target.value)}><option value="">All</option>{customers.map(c => <option key={c.acctID} value={c.acctID}>{c.label}</option>)}</select></div>
+//            <div className="rp-filter-group" style={{ minWidth: 180 }}><label>Item</label><select value={selectedItem} onChange={e => setSelectedItem(e.target.value)}><option value="">All</option>{items.map(i => <option key={i.itemID} value={i.itemID}>{i.label}</option>)}</select></div>
+//            <button className="rp-btn-search" onClick={handleSearch} disabled={loading}><FaSearch /> {loading ? "Loading..." : "Generate"}</button>
+//        </>
+//    );
+
+//    return (
+//        <ReportTemplate title="SALE REPORT" subtitle="Summary & detail of sales" filters={filters} printedBy="admin"
+//            metaFields={data ? [{ label: "Sales", value: data.length }, { label: "Total Qty", value: f(totalQty) }, { label: "Total Amount", value: f(totalAmount) }] : null}>
+//            {error && <div className="rp-error">⚠ {error}</div>}
+//            {loading && <div className="rp-no-data">⏳ Loading...</div>}
+//            {data && !loading && data.map((s) => (
+//                <div key={s.tranNumb} style={{ marginBottom: 16 }}>
+//                    <div style={{ display: 'flex', gap: 16, padding: '10px 14px', border: '1px solid #e5e7eb', borderRadius: 8, background: '#fafbfc', marginBottom: 4, cursor: 'pointer' }} onClick={() => toggleExpand(s.tranNumb)}>
+//                        <div style={{ flex: 1 }}><strong>{s.billNumb}</strong></div>
+//                        <div style={{ flex: 1 }}>{formatDt(s.tranDate)}</div>
+//                        <div style={{ flex: 2 }}>{s.customerName}</div>
+//                        <div style={{ flex: 1, textAlign: 'center' }}>{s.totalQty} qty</div>
+//                        <div style={{ flex: 1, textAlign: 'right', fontWeight: 700 }}>{f(s.totalAmount)}</div>
+//                        <div style={{ width: 24, textAlign: 'center', color: '#2563eb' }}>{expanded[s.tranNumb] ? <FaChevronDown /> : <FaChevronRight />}</div>
+//                    </div>
+//                    {expanded && expanded[s.tranNumb] && (
+//                        <div className="rp-table-wrapper"><table className="rp-table" style={{ fontSize: 10 }}><thead><tr><th>Item</th><th>Model</th><th className="text-center">Qty</th><th className="text-right">Rate</th><th className="text-right">Amount</th></tr></thead><tbody>{s.items?.map((item, idx) => (<tr key={idx}><td>{item.itemName}</td><td>{item.model || '-'}</td><td className="text-center">{item.quantity}</td><td className="text-right">{f(item.rate)}</td><td className="text-right">{f(item.amount)}</td></tr>))}</tbody></table></div>
+//                    )}
+//                </div>
+//            ))}
+//            {!data && !loading && !error && <div className="rp-no-data">📊 Select filters and click "Generate Report"</div>}
+//        </ReportTemplate>
+//    );
+//}
+
+import React, { useState, useEffect } from "react";
 import reportApi from "../../../api/reportApi";
 import { getCoaTree } from "../../../api/coaApi";
 import itemApi from "../../../api/itemApi";
-import { FaSearch, FaChevronDown, FaChevronRight } from "react-icons/fa";
+import {
+    FaSearch,
+    FaFilePdf,
+    FaFileExcel,
+    FaPrint
+} from "react-icons/fa";
 import ReportTemplate from "../ReportTemplate";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
 
 export default function SaleReport() {
     const [loading, setLoading] = useState(false);
@@ -11,79 +110,543 @@ export default function SaleReport() {
     const [items, setItems] = useState([]);
     const [selectedCustomer, setSelectedCustomer] = useState("");
     const [selectedItem, setSelectedItem] = useState("");
-    const [fromDate, setFromDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().split('T')[0]);
-    const [toDate, setToDate] = useState(new Date().toISOString().split('T')[0]);
-    const [data, setData] = useState(null);
-    const [error, setError] = useState("");
-    const [expanded, setExpanded] = useState({});
+    const [fromDate, setFromDate] = useState(
+        new Date(
+            new Date().getFullYear(),
+            new Date().getMonth(),
+            1
+        )
+            .toISOString()
+            .split("T")[0]
+    );
 
-    useEffect(() => { loadDropdowns(); }, []);
+    const [toDate, setToDate] = useState(
+        new Date().toISOString().split("T")[0]
+    );
+
+    const [flatData, setFlatData] = useState([]);
+    const [error, setError] = useState("");
+
+    const loggedInUser =
+        localStorage.getItem("userName") ||
+        localStorage.getItem("username") ||
+        localStorage.getItem("fullName") ||
+        "Admin User";
+
+    const branchName =
+        localStorage.getItem("branchName") || "Main Branch";
+
+    useEffect(() => {
+        loadDropdowns();
+    }, []);
 
     const loadDropdowns = async () => {
         try {
-            const [coaRes, itemRes] = await Promise.all([getCoaTree(), itemApi.getAll()]);
+            const [coaRes, itemRes] = await Promise.all([
+                getCoaTree(),
+                itemApi.getAll()
+            ]);
+
             let custList = [];
+
             const flatten = (tree) => {
                 for (const acc of tree) {
-                    const id = acc.acctID || acc.AcctID; const code = acc.AcctCode || acc.acctCode || "";
-                    const name = acc.AcctName || acc.acctName || ""; const cat = (acc.AccountCategory || acc.accountCategory || "").trim();
-                    if (acc.acctLast && cat === "Customer" && id) custList.push({ acctID: id, label: `${code} - ${name}` });
-                    if (acc.children?.length) flatten(acc.children);
+                    const id =
+                        acc.acctID ||
+                        acc.AcctID ||
+                        acc.id;
+
+                    const code =
+                        acc.AcctCode ||
+                        acc.acctCode ||
+                        acc.code ||
+                        "";
+
+                    const name =
+                        acc.AcctName ||
+                        acc.acctName ||
+                        acc.name ||
+                        "";
+
+                    const leaf =
+                        acc.acctLast ||
+                        acc.AcctLast ||
+                        acc.isLeaf;
+
+                    const cat = (
+                        acc.AccountCategory ||
+                        acc.accountCategory ||
+                        ""
+                    ).trim();
+
+                    if (leaf && cat === "Customer" && id) {
+                        custList.push({
+                            acctID: id,
+                            label: `${code} - ${name}`
+                        });
+                    }
+
+                    if (acc.children?.length) {
+                        flatten(acc.children);
+                    }
                 }
             };
+
             flatten(coaRes.data?.data || coaRes.data || []);
             setCustomers(custList);
-            setItems((itemRes.data?.data || itemRes.data || []).map(i => ({ itemID: i.itemID || i.ItemID, label: i.itemName || i.ItemName })));
-        } catch (err) { }
+
+            const itemData =
+                itemRes.data?.data ||
+                itemRes.data ||
+                [];
+
+            setItems(
+                itemData.map((i) => ({
+                    itemID:
+                        i.itemID ||
+                        i.ItemID ||
+                        i.id,
+                    label:
+                        i.itemName ||
+                        i.ItemName ||
+                        i.name ||
+                        ""
+                }))
+            );
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     const handleSearch = async () => {
-        setLoading(true); setError("");
+        setLoading(true);
+        setError("");
+
         try {
-            const res = await reportApi.getSaleReport(fromDate, toDate, selectedCustomer || null, selectedItem || null);
-            setData(res.data?.data || null); setExpanded({});
-        } catch (err) { setError(err.response?.data?.message || "Failed"); }
-        finally { setLoading(false); }
+            const res =
+                await reportApi.getSaleReport(
+                    fromDate,
+                    toDate,
+                    selectedCustomer || null,
+                    selectedItem || null
+                );
+
+            const nestedData =
+                res.data?.data || [];
+
+            const flat = [];
+
+            for (const sale of nestedData) {
+                if (
+                    sale.items &&
+                    sale.items.length > 0
+                ) {
+                    for (const item of sale.items) {
+                        flat.push({
+                            billNo:
+                                sale.billNumb || "-",
+                            date:
+                                sale.tranDate || "",
+                            customer:
+                                sale.customerName ||
+                                "-",
+                            itemName:
+                                item.itemName || "-",
+                            model:
+                                item.model || "",
+                            qty:
+                                Number(
+                                    item.quantity
+                                ) || 0,
+                            rate:
+                                Number(item.rate) || 0,
+                            amount:
+                                Number(
+                                    item.amount
+                                ) || 0
+                        });
+                    }
+                }
+            }
+
+            flat.sort(
+                (a, b) =>
+                    new Date(a.date) -
+                    new Date(b.date)
+            );
+
+            setFlatData(flat);
+        } catch (err) {
+            setError(
+                err.response?.data?.message ||
+                "Failed to load report"
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
-    const toggleExpand = (id) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-    const formatDt = (d) => { if (!d) return ""; const dt = new Date(d); const m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; return `${String(dt.getDate()).padStart(2, '0')}-${m[dt.getMonth()]}-${dt.getFullYear()}`; };
-    const f = (n) => new Intl.NumberFormat('en-PK', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n || 0);
+    const formatDate = (date) => {
+        if (!date) return "-";
+        const dt = new Date(date);
+        const months = [
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+        return `${String(dt.getDate()).padStart(2, '0')}-${months[dt.getMonth()]}-${dt.getFullYear()}`;
+    };
 
-    const totalAmount = data?.reduce((s, d) => s + (d.totalAmount || 0), 0) || 0;
-    const totalQty = data?.reduce((s, d) => s + (d.totalQty || 0), 0) || 0;
+    const formatNumber = (num) => {
+        return new Intl.NumberFormat("en-PK", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(num || 0);
+    };
+
+    const totalQty = flatData.reduce(
+        (sum, row) => sum + row.qty,
+        0
+    );
+
+    const totalAmount = flatData.reduce(
+        (sum, row) => sum + row.amount,
+        0
+    );
+
+    // ================= PDF =================
+    const exportPDF = () => {
+        if (flatData.length === 0) {
+            alert("No data available");
+            return;
+        }
+
+        const doc = new jsPDF({
+            orientation: "landscape",
+            unit: "mm",
+            format: "a4"
+        });
+
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const generatedOn = new Date().toLocaleString();
+
+        const customerFilter = selectedCustomer
+            ? customers.find((c) => c.acctID == selectedCustomer)?.label || "Selected Customer"
+            : "All Customers";
+
+        const itemFilter = selectedItem
+            ? items.find((i) => i.itemID == selectedItem)?.label || "Selected Item"
+            : "All Items";
+
+        // ===== HEADER =====
+        doc.setFont("helvetica");
+        doc.setFontSize(16);
+        doc.setFont("helvetica", "bold");
+        doc.text("SALE REPORT", pageWidth / 2, 12, { align: "center" });
+
+        doc.setFontSize(7);
+        doc.setFont("helvetica", "normal");
+
+        doc.text(`Branch: ${branchName}`, 4, 20);
+        doc.text(`Period: ${fromDate} to ${toDate}`, 4, 25);
+        doc.text(`Customer: ${customerFilter}`, 4, 30);
+        doc.text(`Item: ${itemFilter}`, 4, 35);
+
+        doc.text(`Generated By: ${loggedInUser}`, pageWidth - 4, 20, { align: "right" });
+        doc.text(`Generated On: ${generatedOn}`, pageWidth - 4, 25, { align: "right" });
+        doc.text(`Total Records: ${flatData.length}`, pageWidth - 4, 30, { align: "right" });
+        doc.text(`Total Amount: ${formatNumber(totalAmount)}`, pageWidth - 4, 35, { align: "right" });
+
+        // ===== TABLE BODY =====
+        const body = flatData.map((row, index) => [
+            index + 1,
+            row.billNo,
+            formatDate(row.date),
+            row.customer,
+            row.itemName + (row.model ? ` (${row.model})` : ""),
+            formatNumber(row.qty),
+            formatNumber(row.rate),
+            formatNumber(row.amount)
+        ]);
+
+        // ===== TOTAL ROW =====
+        body.push([
+            { content: "TOTAL", colSpan: 5, styles: { halign: "right", fontStyle: "bold", fontSize: 8 } },
+            { content: formatNumber(totalQty), styles: { halign: "right", fontStyle: "bold", fontSize: 8 } },
+            { content: "-", styles: { halign: "center", fontStyle: "bold", fontSize: 8 } },
+            { content: formatNumber(totalAmount), styles: { halign: "right", fontStyle: "bold", fontSize: 8 } }
+        ]);
+
+        // ===== TABLE =====
+        autoTable(doc, {
+            startY: 40,
+            head: [["#", "BILL NO", "DATE", "CUSTOMER", "ITEM", "QTY", "RATE", "AMOUNT"]],
+            body: body,
+            theme: "plain",
+            tableWidth: 291,
+            tableLineColor: [255, 255, 255],
+            tableLineWidth: 0,
+
+            styles: {
+                font: "helvetica",
+                fontSize: 7,
+                cellPadding: 2,
+                valign: "middle",
+                overflow: "hidden",
+                halign: "left",
+                lineWidth: 0,
+            },
+
+            headStyles: {
+                fillColor: [230, 235, 245],
+                textColor: [20, 30, 50],
+                fontStyle: "bold",
+                halign: "center",
+                fontSize: 7.5,
+                lineWidth: 0,
+            },
+
+            bodyStyles: {
+                textColor: [50, 60, 75],
+                fontSize: 7,
+                lineWidth: 0,
+            },
+
+            alternateRowStyles: {
+                fillColor: [248, 250, 252]
+            },
+
+            columnStyles: {
+                0: { cellWidth: 10, halign: "center" },
+                1: { cellWidth: 52 },
+                2: { cellWidth: 26, halign: "center" },
+                3: { cellWidth: 48 },
+                4: { cellWidth: 65 },
+                5: { cellWidth: 22, halign: "right" },
+                6: { cellWidth: 30, halign: "right" },
+                7: { cellWidth: 38, halign: "right" }
+            },
+
+            margin: { left: 3, right: 3, top: 5, bottom: 10 },
+
+            didDrawPage: (data) => {
+                doc.setFontSize(6.5);
+                doc.setTextColor(130, 130, 130);
+                doc.text(`Page ${data.pageNumber}`, pageWidth - 6, pageHeight - 5, { align: "right" });
+                doc.text(`${loggedInUser} | ${generatedOn}`, 4, pageHeight - 5);
+            }
+        });
+
+        doc.save(`SaleReport_${fromDate}_to_${toDate}.pdf`);
+    };
+
+    // ================= EXCEL =================
+    const exportExcel = () => {
+        if (flatData.length === 0) {
+            alert("No data available");
+            return;
+        }
+
+        const excelData = flatData.map((row, idx) => ({
+            "#": idx + 1,
+            "BILL NO": row.billNo,
+            DATE: formatDate(row.date),
+            CUSTOMER: row.customer,
+            ITEM: row.itemName + (row.model ? ` (${row.model})` : ""),
+            QTY: row.qty,
+            RATE: row.rate,
+            AMOUNT: row.amount
+        }));
+
+        excelData.push({
+            "#": "",
+            "BILL NO": "",
+            DATE: "",
+            CUSTOMER: "TOTAL",
+            ITEM: "",
+            QTY: totalQty,
+            RATE: "",
+            AMOUNT: totalAmount
+        });
+
+        const worksheet = XLSX.utils.json_to_sheet(excelData);
+        worksheet["!cols"] = [
+            { wch: 6 }, { wch: 38 }, { wch: 16 }, { wch: 30 },
+            { wch: 50 }, { wch: 12 }, { wch: 15 }, { wch: 18 }
+        ];
+
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Sale Report");
+        const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+        const blob = new Blob([excelBuffer], { type: "application/octet-stream" });
+        saveAs(blob, `SaleReport_${fromDate}_to_${toDate}.xlsx`);
+    };
+
+    const handlePrint = () => {
+        window.print();
+    };
 
     const filters = (
         <>
-            <div className="rp-filter-group"><label>From</label><input type="date" value={fromDate} onChange={e => setFromDate(e.target.value)} /></div>
-            <div className="rp-filter-group"><label>To</label><input type="date" value={toDate} onChange={e => setToDate(e.target.value)} /></div>
-            <div className="rp-filter-group" style={{ minWidth: 180 }}><label>Customer</label><select value={selectedCustomer} onChange={e => setSelectedCustomer(e.target.value)}><option value="">All</option>{customers.map(c => <option key={c.acctID} value={c.acctID}>{c.label}</option>)}</select></div>
-            <div className="rp-filter-group" style={{ minWidth: 180 }}><label>Item</label><select value={selectedItem} onChange={e => setSelectedItem(e.target.value)}><option value="">All</option>{items.map(i => <option key={i.itemID} value={i.itemID}>{i.label}</option>)}</select></div>
-            <button className="rp-btn-search" onClick={handleSearch} disabled={loading}><FaSearch /> {loading ? "Loading..." : "Generate"}</button>
+            <div className="rp-filter-group">
+                <label>From</label>
+                <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} />
+            </div>
+            <div className="rp-filter-group">
+                <label>To</label>
+                <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} />
+            </div>
+            <div className="rp-filter-group" style={{ minWidth: 220 }}>
+                <label>Customer</label>
+                <select value={selectedCustomer} onChange={(e) => setSelectedCustomer(e.target.value)}>
+                    <option value="">All Customers</option>
+                    {customers.map((c) => (
+                        <option key={c.acctID} value={c.acctID}>{c.label}</option>
+                    ))}
+                </select>
+            </div>
+            <div className="rp-filter-group" style={{ minWidth: 220 }}>
+                <label>Item</label>
+                <select value={selectedItem} onChange={(e) => setSelectedItem(e.target.value)}>
+                    <option value="">All Items</option>
+                    {items.map((i) => (
+                        <option key={i.itemID} value={i.itemID}>{i.label}</option>
+                    ))}
+                </select>
+            </div>
+            <button className="rp-btn-search" onClick={handleSearch} disabled={loading}>
+                <FaSearch /> {loading ? "Loading..." : "Generate"}
+            </button>
         </>
     );
 
+    const exportButtons = flatData.length > 0 ? (
+        <div style={{ display: "flex", gap: "10px" }}>
+            <button onClick={exportPDF} style={{ background: "#dc2626", color: "#fff", border: "none", padding: "10px 16px", borderRadius: "8px", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", fontWeight: 600 }}>
+                <FaFilePdf /> PDF
+            </button>
+            <button onClick={exportExcel} style={{ background: "#16a34a", color: "#fff", border: "none", padding: "10px 16px", borderRadius: "8px", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", fontWeight: 600 }}>
+                <FaFileExcel /> Excel
+            </button>
+            <button onClick={handlePrint} style={{ background: "#475569", color: "#fff", border: "none", padding: "10px 16px", borderRadius: "8px", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", fontWeight: 600 }}>
+                <FaPrint /> Print
+            </button>
+        </div>
+    ) : null;
+
     return (
-        <ReportTemplate title="SALE REPORT" subtitle="Summary & detail of sales" filters={filters} printedBy="admin"
-            metaFields={data ? [{ label: "Sales", value: data.length }, { label: "Total Qty", value: f(totalQty) }, { label: "Total Amount", value: f(totalAmount) }] : null}>
+        <ReportTemplate
+            title="SALE REPORT"
+            subtitle="Summary & detail of sales"
+            filters={filters}
+            printedBy={loggedInUser}
+            extraActions={exportButtons}
+            metaFields={flatData.length > 0 ? [
+                { label: "Total Records", value: flatData.length },
+                { label: "Total Qty", value: formatNumber(totalQty) },
+                { label: "Total Amount", value: formatNumber(totalAmount) }
+            ] : null}
+        >
             {error && <div className="rp-error">⚠ {error}</div>}
             {loading && <div className="rp-no-data">⏳ Loading...</div>}
-            {data && !loading && data.map((s) => (
-                <div key={s.tranNumb} style={{ marginBottom: 16 }}>
-                    <div style={{ display: 'flex', gap: 16, padding: '10px 14px', border: '1px solid #e5e7eb', borderRadius: 8, background: '#fafbfc', marginBottom: 4, cursor: 'pointer' }} onClick={() => toggleExpand(s.tranNumb)}>
-                        <div style={{ flex: 1 }}><strong>{s.billNumb}</strong></div>
-                        <div style={{ flex: 1 }}>{formatDt(s.tranDate)}</div>
-                        <div style={{ flex: 2 }}>{s.customerName}</div>
-                        <div style={{ flex: 1, textAlign: 'center' }}>{s.totalQty} qty</div>
-                        <div style={{ flex: 1, textAlign: 'right', fontWeight: 700 }}>{f(s.totalAmount)}</div>
-                        <div style={{ width: 24, textAlign: 'center', color: '#2563eb' }}>{expanded[s.tranNumb] ? <FaChevronDown /> : <FaChevronRight />}</div>
+
+            {flatData.length > 0 && !loading && (
+                <div style={{
+                    background: "#ffffff",
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    boxShadow: "0 2px 10px rgba(0,0,0,0.04)",
+                    width: "100%"
+                }}>
+                    <div style={{ overflowX: "auto", width: "100%" }}>
+                        <table style={{
+                            width: "100%",
+                            borderCollapse: "separate",
+                            borderSpacing: 0,
+                            fontSize: "clamp(10px, 1.2vw, 12px)",
+                            fontFamily: "'Segoe UI', sans-serif",
+                            tableLayout: "auto"
+                        }}>
+                            <thead>
+                                <tr style={{ background: "#f8fafc" }}>
+                                    <th style={thStyle("4%", "center")}>#</th>
+                                    <th style={thStyle("18%", "left")}>BILL NO</th>
+                                    <th style={thStyle("12%", "center")}>DATE</th>
+                                    <th style={thStyle("16%", "left")}>CUSTOMER</th>
+                                    <th style={thStyle("20%", "left")}>ITEM</th>
+                                    <th style={thStyle("8%", "right")}>QTY</th>
+                                    <th style={thStyle("10%", "right")}>RATE</th>
+                                    <th style={thStyle("12%", "right")}>AMOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {flatData.map((row, idx) => (
+                                    <tr key={idx} style={{ background: idx % 2 === 0 ? "#ffffff" : "#f9fbfd" }}>
+                                        <td style={tdStyle("center", "#475569")}>{idx + 1}</td>
+                                        <td style={tdStyle("left", "#334155", false, true, true)}>{row.billNo}</td>
+                                        <td style={tdStyle("center", "#475569", true)}>{formatDate(row.date)}</td>
+                                        <td style={tdStyle("left", "#334155", false, true)}>{row.customer}</td>
+                                        <td style={tdStyle("left", "#334155", false, true)}>
+                                            {row.itemName}{row.model ? ` (${row.model})` : ""}
+                                        </td>
+                                        <td style={tdStyle("right", "#0f172a", true)}>{formatNumber(row.qty)}</td>
+                                        <td style={tdStyle("right", "#0f172a", true)}>{formatNumber(row.rate)}</td>
+                                        <td style={tdStyle("right", "#0f172a", true, false, true)}>{formatNumber(row.amount)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                            <tfoot>
+                                <tr style={{ background: "#f1f5f9" }}>
+                                    <td colSpan={5} style={tfStyle("right")}>TOTAL</td>
+                                    <td style={tfStyle("right")}>{formatNumber(totalQty)}</td>
+                                    <td style={tfStyle("center")}>-</td>
+                                    <td style={tfStyle("right", "#0f172a")}>{formatNumber(totalAmount)}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-                    {expanded && expanded[s.tranNumb] && (
-                        <div className="rp-table-wrapper"><table className="rp-table" style={{ fontSize: 10 }}><thead><tr><th>Item</th><th>Model</th><th className="text-center">Qty</th><th className="text-right">Rate</th><th className="text-right">Amount</th></tr></thead><tbody>{s.items?.map((item, idx) => (<tr key={idx}><td>{item.itemName}</td><td>{item.model || '-'}</td><td className="text-center">{item.quantity}</td><td className="text-right">{f(item.rate)}</td><td className="text-right">{f(item.amount)}</td></tr>))}</tbody></table></div>
-                    )}
                 </div>
-            ))}
-            {!data && !loading && !error && <div className="rp-no-data">📊 Select filters and click "Generate Report"</div>}
+            )}
+
+            {flatData.length === 0 && !loading && !error && (
+                <div className="rp-no-data">📊 Select filters and click "Generate Report"</div>
+            )}
         </ReportTemplate>
     );
 }
+
+// ========== STYLE HELPERS ==========
+const thStyle = (width, align) => ({
+    padding: "14px 10px",
+    borderBottom: "2px solid #e2e8f0",
+    textAlign: align,
+    color: "#0f172a",
+    fontWeight: "700",
+    whiteSpace: "nowrap",
+    fontSize: "11px",
+    width: width,
+    textTransform: "uppercase",
+    letterSpacing: "0.5px"
+});
+
+const tdStyle = (align, color = "#334155", nowrap = false, wordBreak = false, bold = false) => ({
+    padding: "10px 10px",
+    borderBottom: "1px solid #edf2f7",
+    textAlign: align,
+    color: color,
+    fontWeight: bold ? 600 : 400,
+    whiteSpace: nowrap ? "nowrap" : "normal",
+    wordBreak: wordBreak ? "break-word" : "normal",
+    fontSize: "12px",
+    fontVariantNumeric: align === "right" ? "tabular-nums" : "normal"
+});
+
+const tfStyle = (align, color = "#0f172a") => ({
+    padding: "14px 10px",
+    borderTop: "2px solid #dbe3ea",
+    textAlign: align,
+    fontWeight: "700",
+    color: color,
+    fontSize: "12px"
+});
