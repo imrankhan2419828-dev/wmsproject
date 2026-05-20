@@ -1,0 +1,6 @@
+1|Administrator||||||
+2|SuperAdmin||||||
+3|BranchAdmin||||||
+4|Manager||||||
+5|Operator||||||
+6|Viewer||||||

@@ -1,0 +1,29 @@
+1|dashboard|Dashboard||0||Dashboard||1|1||??|Main
+2|users|User Management||2||Users||1|1||??|System Section
+3|role-permission|Role Permission||2||Role Permission||2|1||??|System Section
+4|branch|Branch Management||2||Branch||3|1||??|System Section
+5|coa|Chart of Accounts||1||COA||1|1||??|Coding Section
+6|company|||1||Company||2|1||??|Coding Section
+7|category|Category Management||1||Category||3|1||??|Coding Section
+8|item|||1||Item||4|1||??|Coding Section
+9|purchase|Purchase Management||3||Purchase||1|1||??|Entry Section
+11|sales|Sales Module||3||Sales||3|1||??|Entry Section
+12|sales-return|||3|12|Sales Return||4|1||??|Entry Section
+13|payments|Payments Module||3||Payments||5|1||??|Entry Section
+14|receiving|Receiving Module||3||Receiving||6|1||??|Entry Section
+15|postdated-cheques|Postdated Cheques||3||Postdated Cheques||7|1||??|Entry Section
+16|reports|Reports Module||||Reports||16|1||??|Reporting Section
+17|purchase-report|Purchase Report||4||Purchase Report||1|1|16|??|Reporting Section
+20|sales-report|Sales Report||4||Sales Report||4|1|16|??|Reporting Section
+21|sales-return-report|Sales Return Report||4||Sales Return Report||5|1|16|??|Reporting Section
+22|stock|Stock Management||||Stock||5|1||??|Inventory
+23|form-detail|Form/Menu Management|System Section|||Form Manager||6|1||??|System Section
+25|workshop-dashboard|Workshop Dashboard||||Workshop||8|1||??|Workshop
+27|vehicles|Vehicle Management||||Vehicles||1|1|25|??|Workshop
+28|service-catalog|Service Catalog||||Services||2|1|25|???|Workshop
+29|technicians|Technician Management||||Technicians||3|1|25|?????|Workshop
+30|job-cards|Job Cards||||Job Cards||4|1|25|??|Workshop
+31|booking-diary|Booking Diary||||Booking Diary||5|1|25|??|Workshop
+10|purchase-return|Purchase Return||3||Purchase Return||2|1||??|Entry Section
+18|supplier-balancing|Supplier Balancing Report||4||Supplier Balancing||2|1|16|??|Reporting Section
+19|purchase-return-report|Purchase Return Report||4||Purchase Return Report||3|1|16|??|Reporting Section

@@ -1,0 +1,7 @@
+1|Sale|SAL|SI|Sale Invoice|0|SI
+2|Purchase|PUR|PI|Purchase Invoice|0|PI
+3|Receiving|RCV|RV|Receipt Voucher|0|RV
+4|Payment|PAY|PV|Payment Voucher|0|PV
+5|Journal|JRN|JV|Journal Voucher|0|JV
+6|Sale Return|SRT|CR|Credit Note|0|CR
+7|Purchase Return|PRT|DB|Debit Note|0|DB

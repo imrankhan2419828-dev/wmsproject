@@ -1,0 +1,21 @@
+1|dashboard|Dashboard||||Dashboard||1|1||
+2|users|User Management||||Users||1|1|1|
+3|role-permission|Role Permission||||Role Permission||2|1|1|
+4|branch|Branch Management||||Branch||3|1|1|
+5|coa|Chart of Accounts||||COA||4|1|1|
+6|company|||||Company||5|1||
+7|category|Category Management||||Category||6|1||
+8|item|||||Item||7|1||
+9|purchase|Purchase Management||||Purchase||9|1||
+11|sales|Sales Module||||Sales||11|1||
+12|sales-return||||12|Sales Return|||1||
+13|payments|Payments Module||||Payments||13|1||
+14|receiving|Receiving Module||||Receiving||14|1||
+15|postdated-cheques|Postdated Cheques||||Postdated Cheques||15|1||??
+16|reports|Reports Module||||Reports||16|0||
+17|purchase-report|Purchase Report||||Purchase Report||1|1|16|
+20|sales-report|Sales Report||||Sales Report||4|1|16|FaShoppingCart
+21|sales-return-report|Sales Return Report||||Sales Return Report||5|1|16|FaUndo
+10|purchase-return|Purchase Return||||Purchase Return||10|1|9|
+18|supplier-balancing|Supplier Balancing Report||||Supplier Balancing||2|1|16|FaBalanceScale
+19|purchase-return-report|Purchase Return Report||||Purchase Return Report||3|1|16|FaArrowCircleLeft

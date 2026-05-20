@@ -1,0 +1,16 @@
+1|System Administrator|||admin|$2a$11$xwTzbbogRSW.bJYjl7ggTe2eTLcDKgEoYE.QBxOO1HKtuxg5SoI6e||||1|1|1|||||0|||||||||||
+2|imran|||imran|$2a$11$t8ghwLcZ0NzkUCrFVpfK/.o/eFjwDV9Au.qUvrFEd./ZBCnjpTX3i||||0|1|2||2025-12-18 17:34:01.687|1|2026-03-10 15:56:49.323|0|||||||||||
+3|faheem|||faheem|$2a$11$gXSZGQT/YmBicie9UBhtiuCc8rc/NBUvRwQBasQPydt7/vF.xEmWm||||0|1|3||2025-12-18 17:36:41.843|1|2026-03-10 15:54:05.903|0|||||||||||
+4|New Motors Admin|0|1|admin_nm|$2a$11$NMCMQjb35M2anu.7SvrICe8RQ2PJ4ldxY9xCBUKJAZYuAfF7bWjHq||||1|2|1||2025-12-18 18:08:30.247||||||||||||||
+12|Test Manual User|1|1|testmanual6620B977-7376-4C2B-B506-0843DC8DA54E|hashedpassword123||||0|1|1|1|2026-03-05 21:03:00.237|1|2026-03-06 16:38:25.880|0|||||||||||
+16|salik|0|1|salik|$2a$11$DgOQ3wqDLQ/2eQAyXYrWO.7ZIsFfzbq1NY623Dk9WgMEeCpuwjpI2|1|0||0|1|4|1|2026-03-05 21:50:16.580|1|2026-03-10 15:54:33.690|0|0|1|0||0|1|0|0|0|0|0
+17|samer|0|1|sameer|$2a$11$vBUwVepjU612Tg0TGxp4Pu5zk.XJW3ai7Z5rUVN3A/FGqjZhnujuS|1|0||0|1|6|1|2026-03-05 21:55:38.407|1|2026-03-10 15:55:08.557|0|0|1|0||0|1|0|0|0|0|0
+18|barha|0|1|barha|$2a$11$uww7CykyHKmrDceQw1DYNOgD1mnlzeGYT3MF/3P/Wer3nWi8KKeiC|1|0||0|1|5|1|2026-03-06 17:30:27.127|1|2026-03-10 15:12:24.937|0|0|1|0||0|1|0|0|0|0|0
+19|waqas|0|1|waqas|$2a$11$SL/ulNahqzITbngAqSghPu0cF2cHDa9DbQ0CAsdDvBLTup8ez.4.W|1|0||0|1|1|1|2026-03-10 14:04:51.093|||0|0|1|0||0|1|0|0|0|0|0
+20|Abdul Qadeer|0|1|qadeer|$2a$11$WO78ysZ7s1qA7BAW9WUWvuoM7r5ByEYr02mJJ/kBTr873LgYgdh4O|1|0||0|1|4|1|2026-03-14 14:15:56.753|1|2026-03-14 14:16:53.003|0|0|1|0||0|1|0|0|0|0|0
+21|Ali|0|1|Ali|$2a$11$5XFi/RaK4wB6BDNja1CG6ej7XeSHrtSE.U8oZlalEfgz4htQPCvTm|1|0||0|1|3|2|2026-03-14 17:29:33.463|||0|0|1|0||0|1|0|0|0|0|0
+22|naseer|0|1|naseer|$2a$11$/VukRnXnXMT669F6AGbwsu6qxFuok6Wq4L7tJUCX.b/Fw6QZvtQTy|1|0|naseer@gmail.com|0|2|5|4|2026-04-07 14:39:34.967|||0|0|1|0||0|1|0|0|0|0|0
+23|wali bhai|0|1|wali bhai|$2a$11$biNjZb1VEyIp/ZzKD1gTO.FEB4KNNFhIPCK.nMwaGBaxfajTHK5bG|1|0||0|2|5|4|2026-04-07 14:56:57.280|4|2026-04-07 14:58:37.827|0|0|1|0||0|1|0|0|0|0|0
+24|Azaan|0|1|Azaanbaba|$2a$11$a1ZJHV6oEQsnLvhfArBRCOSr2KWfTay/U4Ln5o8fNOjr6NZYAyvOe|1|0||0|1|5|2|2026-04-07 15:42:54.753|2|2026-04-07 15:43:23.983|0|0|1|0||0|1|0|0|0|0|0
+1022|Jamal|0|1|jamal|$2a$11$vUULEhTCTQJrqddi1uZ2kOjkBvOPF./eO72lhjiiwDIsc/fVBx.ma|1|0||0|1|5|2|2026-04-22 18:23:27.313|||0|0|1|0||0|1|0|0|0|0|0
+1023|tariq|0|1|tariq|$2a$11$vrIhTvyidCf5TbvniuHu8eRIs.AuuafrHBd5x8ZRjN/Awi8.1asem|1|0||0|1|5|2|2026-04-23 09:55:28.000|||0|0|1|0||0|1|0|0|0|0|0

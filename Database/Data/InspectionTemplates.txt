@@ -1,0 +1,4 @@
+1|PRE-001|Pre-Job Vehicle Inspection|PRE_JOB|Standard inspection before starting work|1||2026-03-18 15:39:25.673|||1
+2|POST-001|Post-Job Quality Check|POST_JOB|Final quality check after job completion|1||2026-03-18 15:39:25.673|||1
+3|SAFETY-001|Safety Critical Items|SAFETY|Inspection of safety-critical components|1||2026-03-18 15:39:25.673|||1
+4|BRAKE-001|Brake System Inspection|PERIODIC|Complete brake system check|1||2026-03-18 15:39:25.673|||1
